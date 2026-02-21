@@ -1,0 +1,103 @@
+<Window x:Class="LibraryManagement.Views.AddEditBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Dobavlenie knigi"
+        Height="500" 
+        Width="550"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="TitleTextBlock" 
+                   Text="Dobavlenie knigi" 
+                   FontSize="20" 
+                   FontWeight="Bold" 
+                   Foreground="#2c3e50"
+                   Margin="0,0,0,20"
+                   Grid.Row="0"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock Text="Nazvanie knigi:" FontWeight="SemiBold" Margin="0,5"/>
+                <TextBox x:Name="TitleTextBox" 
+                         Height="35" 
+                         Margin="0,0,0,15"
+                         Padding="5"
+                         BorderBrush="#bdc3c7"
+                         BorderThickness="1"/>
+
+                <TextBlock Text="Avtor:" FontWeight="SemiBold" Margin="0,5"/>
+                <ComboBox x:Name="AuthorComboBox" 
+                          Height="35" 
+                          Margin="0,0,0,15"
+                          DisplayMemberPath="FullName"
+                          BorderBrush="#bdc3c7"
+                          BorderThickness="1"/>
+
+                <TextBlock Text="Zhanr:" FontWeight="SemiBold" Margin="0,5"/>
+                <ComboBox x:Name="GenreComboBox" 
+                          Height="35" 
+                          Margin="0,0,0,15"
+                          DisplayMemberPath="Name"
+                          BorderBrush="#bdc3c7"
+                          BorderThickness="1"/>
+
+                <TextBlock Text="God izdaniya:" FontWeight="SemiBold" Margin="0,5"/>
+                <TextBox x:Name="YearTextBox" 
+                         Height="35" 
+                         Margin="0,0,0,15"
+                         Padding="5"
+                         BorderBrush="#bdc3c7"
+                         BorderThickness="1"/>
+
+                <TextBlock Text="ISBN:" FontWeight="SemiBold" Margin="0,5"/>
+                <TextBox x:Name="ISBNTextBox" 
+                         Height="35" 
+                         Margin="0,0,0,15"
+                         Padding="5"
+                         BorderBrush="#bdc3c7"
+                         BorderThickness="1"/>
+
+                <TextBlock Text="Kolichestvo v nalichii:" FontWeight="SemiBold" Margin="0,5"/>
+                <TextBox x:Name="QuantityTextBox" 
+                         Height="35" 
+                         Margin="0,0,0,15"
+                         Padding="5"
+                         BorderBrush="#bdc3c7"
+                         BorderThickness="1"/>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right"
+                    Margin="0,20,0,0">
+            <Button Content="Sohranit" 
+                    Width="100" 
+                    Height="40" 
+                    Margin="5"
+                    Background="#27ae60"
+                    Foreground="White"
+                    BorderBrush="#27ae60"
+                    BorderThickness="1"
+                    FontWeight="SemiBold"
+                    Click="SaveButton_Click"/>
+            <Button Content="Otmena" 
+                    Width="100" 
+                    Height="40" 
+                    Margin="5"
+                    Background="#7f8c8d"
+                    Foreground="White"
+                    BorderBrush="#7f8c8d"
+                    BorderThickness="1"
+                    FontWeight="SemiBold"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
